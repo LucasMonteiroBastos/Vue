@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>Curso Vue - Aula 04 (v-for)</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+</head>
+
+
+<body>
+    <div id="app">
+        <p
+            v-for="(message, index) in messageList"
+            v-bind:key="message"
+        >
+            {{ message }} - {{ index }}
+        </p>
+        
+    </div>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data() {
+                return{
+                    messageList: [
+                       'Brasil',
+                       'acima',
+                       'de tudo,',
+                       'Deus',
+                       'acima',
+                       'de todos...',
+                       'Foi a unica frase que veio na minha mente kkkkkkkkkkkkkkkkkkkkk'
+                   ],
+                };
+            },
+        });
+    </script>
+</body>
+</html>
