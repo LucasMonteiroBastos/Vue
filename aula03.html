@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Curso Vue - Aula 03</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+</head>
+
+
+<body>
+    <div id="app">
+      <p v-bind:title="title">
+        {{ message }}
+      </p>
+      <p v-if="show">
+          Menssagem Invisivel
+      </p>
+        
+    </div>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data() {
+                return{
+                    message: 'Gloria a Deus deu certo!',
+                    title: 'Olha só temos um titulo',
+                    show: false,
+                };
+            },
+        });
+    </script>
+</body>
+</html>
