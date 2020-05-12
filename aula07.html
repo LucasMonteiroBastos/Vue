@@ -1,13 +1,15 @@
 <html>
   <head>
-    <title>Curso Vue - Aula 06</title>
+    <title>Curso Vue - Aula 07</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
 
   <body>
     <div id="app">
-      <input type="text" v-model="text" />
+      <input type="text" v-model="text" v-bind:title="textTitle" />
       <button type="button" v-on:click="save">Salvar</button>
+      <input type="text" v-model="text" :title="textTitle" />
+      <button type="button" @click="save">Salvar Abreviado</button>
       <p>{{ savedText }}</p>
     </div>
     <script>
@@ -17,6 +19,7 @@
           return {
             text: "",
             savedText: "",
+            textTitle: 'Digite Algo',
           };
         },
         methods: {
