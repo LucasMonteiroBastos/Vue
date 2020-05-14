@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>Curso Vue - Aula 17</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+        <my-Form></my-Form>
+    </div>
+    <script>
+    //   const field = Vue.component('Field', {
+    //         template: '<input type="text">',
+    //   });
+
+      const field = {
+            template: '<input type="text">',
+      };
+
+      const myButton = {    
+        template: '<button type="button">Botão</button>',
+      };
+
+      const myForm = {
+           template: '<div>' + 
+                     '<field/>' +
+                     '<my-button/>' +
+                     '</div>',
+           components:  {
+               field,
+               myButton,
+           }          
+      };            
+
+      const app = new Vue({
+        el: "#app",
+        components: {
+            myForm,
+        },
+      });
+    </script>
+  </body>
+</html>
