@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>Curso Vue - Aula 19</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <my-form>
+        <input type="text" />
+        <p>Qualquer Mensagem</p>
+        <button type="button">Transclude</button>
+        
+        <template v-slot:outro>
+          <outro-component>
+            <button type="button1">Outro Componente !</button>
+          </outro-component>
+        </template>
+
+        <template v-slot:terceiro>
+            <p>Terceiro Slot Criado</p>
+        </template>
+      </my-form>
+    </div>
+    <script>
+      const myForm = {
+        template:
+          "<div>" +
+          "<p> Slot Primeiro </p>" +
+          "<slot/>" +
+          "<p> Slot Segundo </p>" +
+          '<slot name="outro" />' +
+          "<p> Slot Terceiro </p>" +
+          '<slot name="terceiro" />' +
+          "</div>",
+      };
+      const outroComponent = {
+        template:
+          "<div>" + "<p>Eu sou outro componente</p>" + "<slot/>" + "</div>",
+      };
+
+      const app = new Vue({
+        el: "#app",
+        components: {
+          myForm,
+          outroComponent,
+        },
+      });
+    </script>
+  </body>
+</html>
